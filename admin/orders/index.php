@@ -13,29 +13,24 @@
 </style>
 <div class="card card-outline rounded-0 card-warning">
 	<div class="card-header">
-		<h3 class="card-title">List of Orders</h3>
+		<h3 class="card-title">Danh sách đặt món</h3>
 	</div>
 	<div class="card-body">
         <div class="container-fluid">
 			<table class="table table-hover table-striped table-bordered" id="list">
 				<colgroup>
 					<col width="5%">
-					<col width="15%">
-					<col width="15%">
-					<col width="15%">
-					<col width="20%">
-					<col width="15%">
-					<col width="10%">
+					<col width="30%">
+					<col width="30%">
+					<col width="35%">
 				</colgroup>
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Created</th>
-						<th>Transaction Code</th>
-						<th>Queue</th>
-						<th>Total Amount</th>
-						<th>Status</th>
-						<th>Action</th>
+						<th>Mã hóa đơn</th>
+						<th>Tổng tiền</th>
+						<th>Trạng thái</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -50,18 +45,16 @@
 					?>
 						<tr>
 							<td class="text-center"><?php echo $i++; ?></td>
-							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
 							<td class=""><?= $row['code'] ?></td>
-							<td class=""><?= $row['queue'] ?></td>
 							<td class="text-right"><?= format_num($row['total_amount'], 2) ?></td>
                             <td class="text-center">
                                 <?php 
                                 switch($row['status']){
                                     case 0:
-                                        echo '<span class="badge badge-primary border-gradient-primary px-3 border">Queued</span>';
+                                        echo '<span class="badge badge-primary border-gradient-primary px-3 border">đang đợi</span>';
                                         break;
                                     case 1:
-                                        echo '<span class="badge badge-success border-gradient-success px-3 border">Served</span>';
+                                        echo '<span class="badge badge-success border-gradient-success px-3 border">đã phục vụ</span>';
                                         break;
                                     default:
                                         echo '<span class="badge badge-light border-gradient-light border px-3 border">N/A</span>';
