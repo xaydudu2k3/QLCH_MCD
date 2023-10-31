@@ -13,9 +13,9 @@
 </style>
 <div class="card card-outline rounded-0 card-warning">
 	<div class="card-header">
-		<h3 class="card-title">List of Menus</h3>
+		<h3 class="card-title">Menu</h3>
 		<div class="card-tools">
-			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Thêm mới</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -23,7 +23,6 @@
 			<table class="table table-hover table-striped table-bordered" id="list">
 				<colgroup>
 					<col width="5%">
-					<col width="15%">
 					<col width="20%">
 					<col width="30%">
 					<col width="10%">
@@ -33,12 +32,11 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Created</th>
-						<th>Menu</th>
-						<th>Description</th>
-						<th>Price</th>
-						<th>Status</th>
-						<th>Action</th>
+						<th>Tên sản phẩm</th>
+						<th>Mô tả</th>
+						<th>Giá</th>
+						<th>Trạng thái</th>
+						<th>Tùy chọn</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -49,7 +47,6 @@
 					?>
 						<tr>
 							<td class="text-center"><?php echo $i++; ?></td>
-							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
 							<td class="">
 								<div style="line-height:1em">
 									<div><?= $row['code'] ?> - <?= $row['name'] ?></div>
@@ -60,22 +57,22 @@
 							<td class="text-right"><?= format_num($row['price'],2) ?></td>
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success px-3 rounded-pill">Available</span>
+                                    <span class="badge badge-success px-3 rounded-pill">Còn hàng</span>
                                 <?php else: ?>
-                                    <span class="badge badge-danger px-3 rounded-pill">Unavailabe</span>
+                                    <span class="badge badge-danger px-3 rounded-pill">Hết hàng</span>
                                 <?php endif; ?>
                             </td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-				                  		Action
+				                  		Tùy chọn
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> Xem</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Sửa</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
+				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Xóa</a>
 				                  </div>
 							</td>
 						</tr>
@@ -97,7 +94,7 @@
 			uni_modal("<i class='fa fa-edit'></i> Add New Menu ","menus/manage_menu.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Menu Details ","menus/view_menu.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> Chi tiết","menus/view_menu.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [

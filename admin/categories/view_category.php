@@ -20,16 +20,16 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 </style>
 <div class="container-fluid">
 	<dl>
-		<dt class="text-muted">Name</dt>
+		<dt class="text-muted">Tên</dt>
 		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
-		<dt class="text-muted">Description</dt>
+		<dt class="text-muted">Mô tả</dt>
 		<dd class="pl-4"><?= isset($description) ? str_replace(["\n\r", "\n", "\r"],"<br>", htmlspecialchars_decode($description)) : '' ?></dd>
-		<dt class="text-muted">Status</dt>
+		<dt class="text-muted">Trạng thái</dt>
 		<dd class="pl-4">
 			<?php if($status == 1): ?>
-				<span class="badge badge-success px-3 rounded-pill">Active</span>
+				<span class="badge badge-success px-3 rounded-pill">Còn hàng</span>
 			<?php else: ?>
-				<span class="badge badge-danger px-3 rounded-pill">Inactive</span>
+				<span class="badge badge-danger px-3 rounded-pill">Hết hàng</span>
 			<?php endif; ?>
 		</dd>
 	</dl>

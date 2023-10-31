@@ -13,9 +13,9 @@
 </style>
 <div class="card card-outline rounded-0 card-warning">
 	<div class="card-header">
-		<h3 class="card-title">List of Categories</h3>
+		<h3 class="card-title">Loại sản phẩm</h3>
 		<div class="card-tools">
-			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Thêm mới</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -32,10 +32,10 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Name</th>
-						<th>Description</th>
-						<th>Status</th>
-						<th>Action</th>
+						<th>Tên loại</th>
+						<th>Mô tả</th>
+						<th>Trạng thái</th>
+						<th>Tùy chọn</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -50,22 +50,22 @@
 							<td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['description'])) ?></p></td>
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success px-3 rounded-pill">Active</span>
+                                    <span class="badge badge-success px-3 rounded-pill">Còn hàng</span>
                                 <?php else: ?>
-                                    <span class="badge badge-danger px-3 rounded-pill">Inactive</span>
+                                    <span class="badge badge-danger px-3 rounded-pill">Hết hàng</span>
                                 <?php endif; ?>
                             </td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-				                  		Action
+				                  		Tùy chọn
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> Xem</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Sửa</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
+				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Xóa</a>
 				                  </div>
 							</td>
 						</tr>
