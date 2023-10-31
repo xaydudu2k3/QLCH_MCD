@@ -68,7 +68,7 @@
                     <div id="pos-field">
                         <div id="menu-list">
                             <fieldset>
-                                <legend>Categories</legend>
+                                <legend>Loại thức ăn</legend>
                                 <div id="cat-list" class="py-1">
                                     <?php 
                                     $cid='';
@@ -83,7 +83,7 @@
                                 </div>
                             </fieldset>
                             <fieldset>
-                                <legend>Menu</legend>
+                                <legend>Thực đơn</legend>
                                 <div id="item-list" class="py-1 overflow-auto">
                                     <div class="row row-cols-xl-3 row-cols-md-2 row-cols-sm-1 gy-2 gx-2">
                                     <?php 
@@ -107,23 +107,23 @@
                             <div id="order-items-holder" class="bg-gradient-light mb-3">
                                 <div id="order-items-header">
                                     <div class="d-flex w-100 bg-gradient-warning">
-                                        <div class="col-3 text-center font-weight-bolder m-0 border">QTY</div>
-                                        <div class="col-6 text-center font-weight-bolder m-0 border">Menu</div>
-                                        <div class="col-3 text-center font-weight-bolder m-0 border">Total</div>
+                                        <div class="col-3 text-center font-weight-bolder m-0 border">Số lượng</div>
+                                        <div class="col-6 text-center font-weight-bolder m-0 border">Thực đơn</div>
+                                        <div class="col-3 text-center font-weight-bolder m-0 border">Giá</div>
                                     </div>
                                 </div>
                                 <div id="order-items-body"></div>
                             </div>
                             <div class="d-flex w-100 mb-2">
-                                <h3 class="col-5 mb-0">Grand Total</h3>
+                                <h3 class="col-5 mb-0">Tổng tiền</h3>
                                 <h3 class="col-7 mb-0 bg-gradient-light rounded-0 text-right" id="grand_total">0.00</h3>
                             </div>
-                            <div class="d-flex w-100 mb-2">
+                            <!-- <div class="d-flex w-100 mb-2">
                                 <h3 class="col-5 mb-0">Tendered</h3>
                                 <h3 class="col-7 mb-0 bg-gradient-light rounded-0 text-right px-0"><input type="number" step="any" name="tendered_amount" class="form-control rounded-0 text-right bg-gradient-light font-weight-bolder" style="font-size:1em" required value="0"></h3>
-                            </div>
+                            </div> -->
                             <div class="d-flex w-100 mb-2">
-                                <h3 class="col-5 mb-0">Change</h3>
+                                <h3 class="col-5 mb-0">Tiền thừa</h3>
                                 <h3 class="col-7 mb-0 bg-gradient-light rounded-0 text-right" id="change">0.00</h3>
                             </div>
                         </div>

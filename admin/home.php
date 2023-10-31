@@ -13,7 +13,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Categories</span>
+        <span class="info-box-text">Loại thức ăn</span>
         <span class="info-box-number text-right h5">
           <?php 
             $category = $conn->query("SELECT * FROM category_list where delete_flag = 0 and `status` = 1")->num_rows;
@@ -31,7 +31,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-warning elevation-1"><i class="fas fa-hamburger"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Menu</span>
+        <span class="info-box-text">Thực đơn</span>
         <span class="info-box-number text-right h5">
           <?php 
             $menus = $conn->query("SELECT id FROM menu_list where delete_flag = 0 and `status` = 1")->num_rows;
@@ -50,7 +50,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-dark elevation-1"><i class="fas fa-table"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Queued Order</span>
+        <span class="info-box-text">Chờ xử lý</span>
         <span class="info-box-number text-right h5">
           <?php 
             $orders = $conn->query("SELECT id FROM order_list where `status` = 0")->num_rows;
@@ -71,7 +71,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-warning elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Total Sales Today</span>
+        <span class="info-box-text">Bán được trong ngày</span>
         <span class="info-box-number text-right h5">
           <?php 
             $orders = $conn->query("SELECT coalesce(SUM(total_amount),0) FROM order_list where date(`date_created`) = '".(date('Y-m-d'))."'")->fetch_array()[0];

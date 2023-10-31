@@ -2,6 +2,7 @@
 #clockdate{
 	float:right;
 }
+
 .clockdate-wrapper {
     background-color: #333;
     padding:10px;
