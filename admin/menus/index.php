@@ -56,7 +56,8 @@
 									<div><small class="text-muted"><?= $row['category'] ?></small></div>
 								</div>
 							</td>
-							<td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['description'])) ?></p></td>
+							<td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['description'])) ?></p></td>							
+							<td class="text-right"><?= format_num($row['price'],2) ?></td>
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
                                     <span class="badge badge-success px-3 rounded-pill">Available</span>
@@ -64,7 +65,6 @@
                                     <span class="badge badge-danger px-3 rounded-pill">Unavailabe</span>
                                 <?php endif; ?>
                             </td>
-							<td class="text-right"><?= format_num($row['price'],2) ?></td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 				                  		Action
