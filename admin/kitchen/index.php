@@ -30,7 +30,7 @@
     }
 </style>
 <div class="content bg-gradient-warning py-3 px-4">
-    <h3 class="font-weight-bolder text-light">Order List (Kitchen Side)</h3>
+    <h3 class="font-weight-bolder text-light">Đơn đặt hàng (Phòng bếp)</h3>
 </div>
 <div class="row mt-n4 justify-content-center">
     <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
@@ -50,15 +50,15 @@
         <div class="card-body">
             <div class="order-list">
                 <div class="d-flex w-100 order-list-header bg-gradient-warning">
-                    <div class="col-9 m-0 border"><b>Product</b></div>
-                    <div class="col-3 m-0 border text-center">QTY</div>
+                    <div class="col-9 m-0 border"><b>Sản phẩm</b></div>
+                    <div class="col-3 m-0 border text-center">Số lượng</div>
                 </div>
                 <div class="order-body">
                 </div>
             </div>
         </div>
         <div class="card-footer py-1 text-center">
-                <button class="btn btn-sm btn-light bg-gradient-light border order-served px-2 btn-block rounded-pill" type="button" data-id="">Serve</button>
+                <button class="btn btn-sm btn-light bg-gradient-light border order-served px-2 btn-block rounded-pill" type="button" data-id="">Phục vụ</button>
         </div>
     </div>
 </div>
@@ -84,7 +84,7 @@
                         var data = resp.data[k]
                         var card = $($('noscript#order-clone').html()).clone()
                         card.attr('data-id',data.id)
-                        card.find('.card-title').text('Queue #' + data.queue)
+                        card.find('.card-title').text('#' + data.queue)
                         Object.keys(data.item_arr).map(i=>{
                             var row = card.find('.order-list-header').clone().removeClass('order-list-header bg-gradient-warning')
                             row.find('div').first().text(data.item_arr[i].item)

@@ -20,8 +20,8 @@
 			<table class="table table-hover table-striped table-bordered" id="list">
 				<colgroup>
 					<col width="5%">
-					<col width="30%">
-					<col width="30%">
+					<col width="25%">
+					<col width="25%">
 					<col width="35%">
 				</colgroup>
 				<thead>
@@ -30,7 +30,7 @@
 						<th>Mã hóa đơn</th>
 						<th>Tổng tiền</th>
 						<th>Trạng thái</th>
-						<th></th>
+						<th>Tùy chọn</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -13,7 +13,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 	<form action="" id="menu-form">
 		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group">
-			<label for="category_id" class="control-label">Category</label>
+			<label for="category_id" class="control-label">Loại sản phẩm</label>
 			<select name="category_id" id="category_id" class="form-control form-control-sm rounded-0" required="required">
 				<option value="" <?= isset($category_id) ? 'selected' : '' ?>></option>
 				<?php 
@@ -25,26 +25,26 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			</select>
 		</div>
 		<div class="form-group">
-			<label for="code" class="control-label">Code</label>
+			<label for="code" class="control-label">Mã sản phẩm</label>
 			<input type="text" name="code" id="code" class="form-control form-control-sm rounded-0" value="<?php echo isset($code) ? $code : ''; ?>"  required/>
 		</div>
 		<div class="form-group">
-			<label for="name" class="control-label">Name</label>
+			<label for="name" class="control-label">Tên</label>
 			<input type="text" name="name" id="name" class="form-control form-control-sm rounded-0" value="<?php echo isset($name) ? $name : ''; ?>"  required/>
 		</div>
 		<div class="form-group">
-			<label for="price" class="control-label">Price</label>
+			<label for="price" class="control-label">Giá</label>
 			<input type="number" step="any" name="price" id="price" class="form-control form-control-sm rounded-0 text-right" value="<?php echo isset($price) ? $price : ''; ?>"  required/>
 		</div>
 		<div class="form-group">
-			<label for="description" class="control-label">Description</label>
+			<label for="description" class="control-label">Mô tả</label>
 			<textarea rows="3" name="description" id="description" class="form-control form-control-sm rounded-0" required><?php echo isset($description) ? $description : ''; ?></textarea>
 		</div>
 		<div class="form-group">
-			<label for="status" class="control-label">Status</label>
+			<label for="status" class="control-label">Trạng thái</label>
 			<select name="status" id="status" class="form-control form-control-sm rounded-0" required="required">
-				<option value="1" <?= isset($status) && $status == 1 ? 'selected' : '' ?>>Available</option>
-				<option value="0" <?= isset($status) && $status == 0 ? 'selected' : '' ?>>Unavailable</option>
+				<option value="1" <?= isset($status) && $status == 1 ? 'selected' : '' ?>>Còn hàng</option>
+				<option value="0" <?= isset($status) && $status == 0 ? 'selected' : '' ?>>Hết hàng</option>
 			</select>
 		</div>
 	</form>

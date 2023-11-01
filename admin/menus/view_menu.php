@@ -20,22 +20,22 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 </style>
 <div class="container-fluid">
 	<dl>
-		<dt class="text-muted">Category</dt>
+		<dt class="text-muted">Loại sản phẩm</dt>
 		<dd class="pl-4"><?= isset($category) ? $category : "" ?></dd>
-		<dt class="text-muted">Code</dt>
+		<dt class="text-muted">Mã sản phẩm</dt>
 		<dd class="pl-4"><?= isset($code) ? $code : "" ?></dd>
-		<dt class="text-muted">Name</dt>
+		<dt class="text-muted">Tên</dt>
 		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
-		<dt class="text-muted">Price</dt>
+		<dt class="text-muted">Giá</dt>
 		<dd class="pl-4"><?= isset($price) ? format_num($price,2) : "" ?></dd>
-		<dt class="text-muted">Description</dt>
+		<dt class="text-muted">Mô tả</dt>
 		<dd class="pl-4"><?= isset($description) ? str_replace(["\n\r", "\n", "\r"],"<br>", htmlspecialchars_decode($description)) : '' ?></dd>
-		<dt class="text-muted">Status</dt>
+		<dt class="text-muted">Trạng thái</dt>
 		<dd class="pl-4">
 			<?php if($status == 1): ?>
-				<span class="badge badge-success px-3 rounded-pill">Available</span>
+				<span class="badge badge-success px-3 rounded-pill">Còng hàng</span>
 			<?php else: ?>
-				<span class="badge badge-danger px-3 rounded-pill">Unavailable</span>
+				<span class="badge badge-danger px-3 rounded-pill">Hết hàng</span>
 			<?php endif; ?>
 		</dd>
 	</dl>
