@@ -94,7 +94,7 @@
                         <li class="nav-item">
                           <a href="./?page=reports" class="nav-link tree-item nav-reports">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Daily Sales Report</p>
+                            <p>Báo cáo bán hàng hàng ngày</p>
                           </a>
                         </li>
                       </ul>

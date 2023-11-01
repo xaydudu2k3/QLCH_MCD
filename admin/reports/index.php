@@ -2,25 +2,25 @@
 $date = isset($_GET['date']) ? $_GET['date'] : date("Y-m-d");
 ?>
 <div class="content py-5 px-3 bg-gradient-warning">
-    <h2>Daily Sales Reports</h2>
+    <h2>Báo cáo bán hàng hàng ngày</h2>
 </div>
 <div class="row flex-column mt-4 justify-content-center align-items-center mt-lg-n4 mt-md-3 mt-sm-0">
     <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
         <div class="card rounded-0 mb-2 shadow">
             <div class="card-body">
                 <fieldset>
-                    <legend>Filter</legend>
+                    <legend>Lọc Báo Cáo</legend>
                     <form action="" id="filter-form">
                         <div class="row align-items-end">
                             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label for="date" class="control-label">Choose Date</label>
+                                    <label for="date" class="control-label">Chọn ngày</label>
                                     <input type="date" class="form-control form-control-sm rounded-0" name="date" id="date" value="<?= $date ?>" required="required">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <button class="btn btn-sm btn-flat btn-primary bg-gradient-primary"><i class="fa fa-filter"></i> Filter</button>
+                                    <button class="btn btn-sm btn-flat btn-primary bg-gradient-primary"><i class="fa fa-filter"></i> Lọc</button>
                                 </div>
                             </div>
                         </div>
@@ -49,12 +49,12 @@ $date = isset($_GET['date']) ? $_GET['date'] : date("Y-m-d");
                         </colgroup>
                         <thead>
                             <tr>
-                                <th class="px-1 py-1 text-center">#</th>
-                                <th class="px-1 py-1 text-center">Time</th>
-                                <th class="px-1 py-1 text-center">Transaction Code</th>
-                                <th class="px-1 py-1 text-center">Queue</th>
-                                <th class="px-1 py-1 text-center">Processed By</th>
-                                <th class="px-1 py-1 text-center">Total</th>
+                                <th class="px-1 py-1 text-center">Mã báo cáo</th>
+                                <th class="px-1 py-1 text-center">Thời gian giao dịch</th>
+                                <th class="px-1 py-1 text-center">Mã giao dịch</th>
+                                <th class="px-1 py-1 text-center">Hàng chờ</th>
+                                <th class="px-1 py-1 text-center">Xử lý bởi</th>
+                                <th class="px-1 py-1 text-center">Tổng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -81,13 +81,13 @@ $date = isset($_GET['date']) ? $_GET['date'] : date("Y-m-d");
                             <?php endwhile; ?>
                             <?php if($stock->num_rows <= 0): ?>
                                 <tr>
-                                    <td class="py-1 text-center" colspan="6">No records found</td>
+                                    <td class="py-1 text-center" colspan="6">Không có dữ liệu được tìm thấy</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th colspan="5" class="text-center">Total Sales</th>
+                                <th colspan="5" class="text-center">Tổng doanh thu</th>
                                 <th class="text-right"><?= format_num($g_total,2) ?></th>
                             </tr>
                         </tfoot>
@@ -111,8 +111,8 @@ $date = isset($_GET['date']) ? $_GET['date'] : date("Y-m-d");
             <div class="col-8">
                 <div style="line-height:1em">
                     <div class="text-center font-weight-bold h5 mb-0"><large><?= $_settings->info('name') ?></large></div>
-                    <div class="text-center font-weight-bold h5 mb-0"><large>Daily Sales Report</large></div>
-                    <div class="text-center font-weight-bold h5 mb-0">as of <?= date("F d, Y", strtotime($date)) ?></div>
+                    <div class="text-center font-weight-bold h5 mb-0"><large>Báo cáo bán hàng hàng ngày</large></div>
+                    <div class="text-center font-weight-bold h5 mb-0">Vào ngày <?= date("F d, Y", strtotime($date)) ?></div>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@ $date = isset($_GET['date']) ? $_GET['date'] : date("Y-m-d");
         var h = $('head').clone()
         var el = $('#printout').clone()
         var ph = $($('noscript#print-header').html()).clone()
-        h.find('title').text("Daily Sales Report - Print View")
+        h.find('title').text("Báo cáo bán hàng hàng ngày - Xem trước")
         var nw = window.open("", "_blank", "width="+($(window).width() * .8)+",left="+($(window).width() * .1)+",height="+($(window).height() * .8)+",top="+($(window).height() * .1))
             nw.document.querySelector('head').innerHTML = h.html()
             nw.document.querySelector('body').innerHTML = ph[0].outerHTML
